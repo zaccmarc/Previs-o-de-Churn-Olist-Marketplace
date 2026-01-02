@@ -1,0 +1,28 @@
+# --- Python e Ambientes Virtuais ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# --- Dados (NUNCA suba dados reais/pesados) ---
+data/
+*.csv
+*.zip
+*.parquet
+
+# --- Segredos e Credenciais (SEGURANÇA MÁXIMA) ---
+kaggle.json
+.env
+.secrets
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints/
+
+# --- Configurações do VS Code e Sistema ---
+.vscode/
+.idea/
+.DS_Store
+
+# --- Modelos Treinados (Opcional: se forem muito grandes) ---
+# models/*.pkl
