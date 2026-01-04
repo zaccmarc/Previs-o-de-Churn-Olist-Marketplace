@@ -1,22 +1,20 @@
 # 📑 Previsão de Churn - Olist Marketplace
 
 ## 1. O Problema de Negócio
-A **Olist** conecta pequenas lojas a grandes marketplaces. O custo para adquirir um novo cliente (CAC) é alto, e a rentabilidade do negócio depende diretamente da recorrência de compras (LTV).
+A **Olist** opera no modelo de marketplace, conectando vendedores a grandes e-commerces. Neste setor, o Custo de Aquisição de Clientes (CAC) é elevado, tornando a retenção (LTV) vital para a lucratividade.
 
-* **A Dor:** Atualmente, não há como identificar proativamente quais usuários pararam de engajar com a plataforma.
-* **O Desafio Específico:** Diferente de empresas de telecom ou SaaS, o varejo não possui um "cancelamento de contrato". O churn é silencioso (Non-contractual Churn). Um cliente pode não comprar há 3 meses e voltar, ou nunca mais voltar.
+* **A Realidade dos Dados (O Pivot):** Nossa análise exploratória revelou que o comportamento padrão do cliente Olist é comprar apenas uma vez (**~97% de taxa de "Churn Natural"**). Diferente de serviços de assinatura (Telecom/SaaS), o abandono não é uma exceção, é a regra.
+* **A Dor Real:** O time de Marketing desperdiça orçamento tentando reativar uma base massiva onde a vasta maioria não tem intenção de compra. Disparar e-mails para todos é ineficiente e caro.
 * **A Questão Chave:**
-    > "Quais clientes têm alta probabilidade de não realizar uma nova compra nos próximos X dias (ex: 90 dias), baseando-se em seu histórico de comportamento, logística e avaliações?"
+    > "Em meio a um oceano de clientes de compra única, quem são os **3% 'ocultos'** que possuem alta probabilidade de realizar uma recompra nos próximos 90 dias?"
 
 ---
 
 ## 2. Objetivo do Projeto
-Desenvolver uma solução de Data Science *end-to-end* que transforme dados brutos transacionais em inteligência acionável para a equipe de retenção e marketing.
+Pivotar de uma abordagem tradicional de *Previsão de Churn* para um modelo de **Propensão à Recompra (Repurchase Propensity)**. O foco muda de "evitar a saída" para "identificar o potencial".
 
-* **Objetivo Primário:** Criar um modelo de Machine Learning capaz de classificar clientes com risco de abandono (Churn), com foco na maximização da métrica **Recall** (minimizando Falsos Negativos, ou seja, evitar deixar passar um cliente que vai sair).
-* **Objetivo Secundário:** Identificar os "drivers" do churn.
-    * *Exemplos:* Atraso na entrega impacta mais que o preço do frete? Notas baixas de review são determinantes?
-
+* **Objetivo Primário (Técnico):** Desenvolver um classificador que ordene os clientes por probabilidade de retorno, priorizando métricas de **Precision@K** e **Lift** (o quanto o modelo é melhor que a média aleatória em encontrar compradores).
+* **Objetivo Secundário (Negócio):** Otimizar o ROI das campanhas de retenção. Ao invés de atacar a base inteira, o modelo permitirá focar recursos apenas nos **Top 5-10% de clientes** com maior score de propensão, onde a chance de conversão é estatisticamente superior.
 ---
 
 ## 3. O Entregável (Solução)
